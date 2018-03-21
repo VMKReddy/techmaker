@@ -95,21 +95,25 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
-  /* USER CODE BEGIN 2 */
 
-  /* USER CODE END 2 */
+  uint8_t delay = 0;
+  int8_t inc = 1;
+  uint8_t max_delay = 20;
 
-  /* Infinite loop */
-  /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  //HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	  //HAL_Delay(500);
 
-  /* USER CODE END WHILE */
-
-  /* USER CODE BEGIN 3 */
-
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 1);
+	  HAL_Delay(delay);
+	  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 0);
+	  HAL_Delay(max_delay - delay);
+	  delay += inc;
+	  if (delay == 0 || delay == max_delay) {
+	     inc = -inc;
+	  }
   }
-  /* USER CODE END 3 */
 
 }
 
