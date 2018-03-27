@@ -10,7 +10,6 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  
   * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
@@ -40,7 +39,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
-#include "usart.h"
 #include "gpio.h"
 
 /* USER CODE BEGIN Includes */
@@ -63,14 +61,6 @@ void SystemClock_Config(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
-
-void light_off(uint16_t led);
-void wait(uint32_t duration);
-
-//void turnOnGreen();
-//void turnOffGreen();
-//void showBlinkingYellow(uint32_t duration);
-//void showRed(uint32_t duration);
 
 /* USER CODE END 0 */
 
@@ -103,15 +93,12 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint16_t leds[3] = {RED_Pin, YELLOW_Pin, GREEN_Pin};
-
   while (1)
   {
 
@@ -119,34 +106,9 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 
-	  light_on(GREEN_Pin);
-
-	  if(stopRequested()) {
-		  wait(1000);
-
-		  for()
-
-
-
-		  light_on(RED_Pin);
-		  wait(5000);
-		  light_off(RED_Pin);
-	  }
   }
   /* USER CODE END 3 */
 
-}
-
-void wait(uint32_t duration) {
-	HAL_Delay(duration);
-}
-
-void light_on(uint16_t led) {
-	HAL_GPIO_WritePin(GPIOC, led, 1);
-}
-
-void light_off(uint16_t led) {
-	HAL_GPIO_WritePin(GPIOC, led, 0);
 }
 
 /**
