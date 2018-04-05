@@ -10,7 +10,6 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  
   * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
@@ -40,6 +39,8 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32f4xx_hal.h"
+#include "adc.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -64,12 +65,6 @@ void SystemClock_Config(void);
 
 /* USER CODE BEGIN 0 */
 
-
-//void turnOnGreen();
-//void turnOffGreen();
-//void showBlinkingYellow(uint32_t duration);
-//void showRed(uint32_t duration);
-
 /* USER CODE END 0 */
 
 /**
@@ -79,23 +74,78 @@ void SystemClock_Config(void);
   */
 int main(void)
 {
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration----------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
 
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
   SystemClock_Config();
 
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_USART2_UART_Init();
+  MX_ADC1_Init();
+  MX_TIM10_Init();
+  /* USER CODE BEGIN 2 */
 
+  HAL_TIM_Base_Start_IT(&htim10);
+
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
   while (1)
   {
 
+	  /* Start single measurement */
+	  HAL_ADC_Start(&hadc1);
+	  /* Wait until measurement is completed */
+	  HAL_ADC_PollForConversion(&hadc1, 100);
+	  /* Obtain the measured value*/
+	  uint32_t value = HAL_ADC_GetValue(&hadc1);
+    //s  HAL_GPIO_TogglePin(GPIOA, LD2_Pin);
 
-	  HAL_GPIO_TogglePin(GPIOC, GREEN_Pin);
-	  HAL_Delay(500);
+      if(value > 2000) {
+    	  HAL_GPIO_WritePin(GPIOC, LED01_Pin, 1);
+    	  HAL_GPIO_WritePin(GPIOC, LED02_Pin, 0);
+    	  if(htim10.Instance ->ARR !=  10000- 1)
+    	  {
+    		  htim10.Instance ->ARR  = 10000 -1;
+    		      	  htim10.Instance->CNT = 0;
+    	  }
+
+      } else {
+    	  HAL_GPIO_WritePin(GPIOC, LED01_Pin, 0);
+    	  HAL_GPIO_WritePin(GPIOC, LED02_Pin, 1);
+    	  if(htim10.Instance ->ARR !=  2500- 1)
+    	      	  {
+    	      		  htim10.Instance ->ARR  = 2500 -1;
+    	      		      	  htim10.Instance->CNT = 0;
+    	      	  }
+      }
+
+  /* USER CODE END WHILE */
+
+  /* USER CODE BEGIN 3 */
+
   }
+  /* USER CODE END 3 */
 
 }
-
 
 /**
   * @brief System Clock Configuration

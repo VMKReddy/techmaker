@@ -62,6 +62,8 @@ void SystemClock_Config(void);
 
 /* USER CODE BEGIN 0 */
 
+volatile uint32_t period = 2000;
+
 /* USER CODE END 0 */
 
 /**
@@ -94,7 +96,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+period = 2000;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,6 +105,10 @@ int main(void)
   {
 
   /* USER CODE END WHILE */
+
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	  HAL_Delay(500);
+	  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 
   /* USER CODE BEGIN 3 */
 

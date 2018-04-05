@@ -37,12 +37,10 @@
 
 /* USER CODE BEGIN 0 */
 
-extern volatile uint32_t period;
-
-
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
+extern TIM_HandleTypeDef htim10;
 
 /******************************************************************************/
 /*            Cortex-M4 Processor Interruption and Exception Handlers         */ 
@@ -71,47 +69,19 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-* @brief This function handles EXTI line 2 interrupt.
+* @brief This function handles TIM1 update interrupt and TIM10 global interrupt.
 */
-void EXTI2_IRQHandler(void)
+void TIM1_UP_TIM10_IRQHandler(void)
 {
-  /* USER CODE BEGIN EXTI2_IRQn 0 */
+  /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 0 */
 
-  period = 500;
+  /* USER CODE END TIM1_UP_TIM10_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim10);
+  /* USER CODE BEGIN TIM1_UP_TIM10_IRQn 1 */
+  HAL_GPIO_TogglePin(LED_STAT_GPIO_Port, LED_STAT_Pin);
+  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 
-  /* USER CODE END EXTI2_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
-  /* USER CODE BEGIN EXTI2_IRQn 1 */
-
-  /* USER CODE END EXTI2_IRQn 1 */
-}
-
-/**
-* @brief This function handles EXTI line 3 interrupt.
-*/
-void EXTI3_IRQHandler(void)
-{
-  /* USER CODE BEGIN EXTI3_IRQn 0 */
-  period = 1000;
-  /* USER CODE END EXTI3_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
-  /* USER CODE BEGIN EXTI3_IRQn 1 */
-
-  /* USER CODE END EXTI3_IRQn 1 */
-}
-
-/**
-* @brief This function handles EXTI line[15:10] interrupts.
-*/
-void EXTI15_10_IRQHandler(void)
-{
-  /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-
-  /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
-  /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-
-  /* USER CODE END EXTI15_10_IRQn 1 */
+  /* USER CODE END TIM1_UP_TIM10_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
