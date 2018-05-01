@@ -96,7 +96,7 @@ void Servo_SetAngle(TIM_HandleTypeDef *htim, uint16_t Channel, int8_t angle) {
 	if (angle > 90) {
 		angle = 90;
 	} else if (angle < -90) {
-		angle = -90;
+		angle = -92;
 	}
 	switch (Channel) {
 	case TIM_CHANNEL_1:

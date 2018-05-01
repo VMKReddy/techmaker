@@ -44,15 +44,36 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "math.h"
 
 /* USER CODE BEGIN Includes */
-
+#define NOTE_c 261
+#define NOTE_d 294
+#define NOTE_e 329
+#define NOTE_f 349
+#define NOTE_g 391
+#define NOTE_gS 415
+#define NOTE_a 440
+#define NOTE_aS 455
+#define NOTE_b 466
+#define NOTE_cH 523
+#define NOTE_cSH 554
+#define NOTE_dH 587
+#define NOTE_dSH 622
+#define NOTE_eH 659
+#define NOTE_fH 698
+#define NOTE_fSH 740
+#define NOTE_gH 784
+#define NOTE_gSH 830
+#define NOTE_aH 880
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+
+uint16_t buf[2048];
 
 /* USER CODE END PV */
 
@@ -103,6 +124,19 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
+  /* Fill in the buf[i] values here */
+  	for (int i = 0; i < 2048; i++) {
+  		buf[i] = sinf(i * 2* 3.14/2047)  * 2047 + 2047;
+  	}
+
+  	/* Channel 1 using DMA with TIM6 Trigger*/
+  	HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_1, (uint32_t *) buf, 2048, DAC_ALIGN_12B_R);
+  	HAL_TIM_Base_Start(&htim6);
+
+  	/* Channel 2 with no trigger */
+  	uint32_t i = 0;
+  	HAL_DAC_Start(&hdac, DAC_CHANNEL_2);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,6 +145,8 @@ int main(void)
   {
 
   /* USER CODE END WHILE */
+
+	  HAL_DAC_SetValue(&hdac, DAC_CHANNEL_2, DAC_ALIGN_12B_R, i++ % 4096);
 
   /* USER CODE BEGIN 3 */
 
