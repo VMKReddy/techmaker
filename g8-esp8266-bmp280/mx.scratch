@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+<ProjectName>C:\work\study\techmaker\g8\g8-esp8266-bmp280\\g8-esp8266-bmp280</ProjectName>
+<ProjectNature>C</ProjectNature> 
+<CMSIS>..\Drivers\CMSIS</CMSIS>
+<HAL_Driver>C:\Users\Sergii\STM32Cube\Repository\STM32Cube_FW_F4_V1.21.0\Drivers\CMSIS</HAL_Driver>
+<Toolchain>SW4STM32</Toolchain>
+<Version>0</Version>
+
+<filestoremove>
+    <file>
+    <name>..\Src\mbedtls.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\aes.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\aesni.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\arc4.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\asn1parse.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\asn1write.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\base64.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\bignum.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\blowfish.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\camellia.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ccm.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\certs.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\cipher.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\cipher_wrap.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\cmac.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ctr_drbg.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\debug.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\des.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\dhm.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecdh.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecdsa.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecjpake.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecp.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecp_curves.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\entropy.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\entropy_poll.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\error.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\gcm.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\havege.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\hmac_drbg.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md2.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md4.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md5.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md_wrap.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\memory_buffer_alloc.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\oid.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\padlock.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pem.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pk.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkcs11.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkcs12.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkcs5.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkparse.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkwrite.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pk_wrap.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\platform.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ripemd160.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\rsa.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\sha1.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\sha256.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\sha512.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_cache.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_ciphersuites.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_cli.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_cookie.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_srv.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_ticket.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_tls.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\threading.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\timing.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\version.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\version_features.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509write_crt.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509write_csr.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_create.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_crl.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_crt.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_csr.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\xtea.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\aes.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\aesni.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\arc4.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\asn1parse.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\asn1write.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\base64.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\bignum.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\blowfish.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\camellia.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ccm.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\certs.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\cipher.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\cipher_wrap.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\cmac.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ctr_drbg.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\debug.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\des.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\dhm.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecdh.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecdsa.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecjpake.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecp.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ecp_curves.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\entropy.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\entropy_poll.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\error.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\gcm.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\havege.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\hmac_drbg.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md2.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md4.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md5.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\md_wrap.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\memory_buffer_alloc.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\oid.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\padlock.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pem.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pk.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkcs11.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkcs12.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkcs5.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkparse.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pkwrite.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\pk_wrap.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\platform.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ripemd160.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\rsa.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\sha1.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\sha256.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\sha512.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_cache.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_ciphersuites.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_cli.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_cookie.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_srv.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_ticket.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\ssl_tls.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\threading.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\timing.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\version.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\version_features.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509write_crt.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509write_csr.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_create.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_crl.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_crt.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\x509_csr.c</name>
+    <name>..\Middlewares\Third_Party\mbedTLS\library\xtea.c</name>
+    </file>
+</filestoremove>
+
+<inctoremove>
+	<Aincludes>
+	   <include></include>
+    </Aincludes>
+	<Cincludes>
+	   		<include>..\Middlewares\Third_Party\mbedTLS\include</include>
+	   		<include>..\Middlewares\Third_Party\mbedTLS\include\mbedtls</include>
+    </Cincludes>
+</inctoremove>
+
+<configs>
+  <config>
+    <name>g8-esp8266-bmp280</name>				
+    <device>STM32F446RETx</device>		 
+    <heapSize>0x200</heapSize>
+    <stackSize>0x400</stackSize>
+    
+    	<board>NUCLEO-F446RE</board>
+			
+    <usedDebug>true</usedDebug>
+    	<debugprobe>swd</debugprobe>
+    <optimization>6</optimization>
+    <icfloc>0</icfloc>
+    <Adefines>
+        <define></define>
+    </Adefines>   
+
+    <UsedFreeRTOS></UsedFreeRTOS>
+    <Aincludes>
+
+
+	    	<include></include>
+    </Aincludes>
+    <Cdefines>
+        <define>__weak=__attribute__((weak))</define>
+        <define>__packed=__attribute__((__packed__))</define>
+    </Cdefines>
+    <definestoremove>
+        <Adefines>
+            <define></define>
+        </Adefines>
+        <Cdefines>
+            <define>MBEDTLS_CONFIG_FILE=&quot;mbedtls_config.h&quot;</define>
+            <define>USE_FULL_LL_DRIVER</define>
+        </Cdefines>         
+    </definestoremove>
+    
+	<Cincludes>
+	   <include>..\Inc</include>
+	   <include>..\Drivers\STM32F4xx_HAL_Driver\Inc</include>
+	   <include>..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy</include>
+	   <include>..\Drivers\CMSIS\Device\ST\STM32F4xx\Include</include>
+	   <include>..\Drivers\CMSIS\Include</include>
+
+    </Cincludes>
+      </config>
+    </configs> 
+
+    <underRoot>true</underRoot>
+    	<copyAsReference>false</copyAsReference>
+ 
+	  		<sourceEntries>
+		    	<sourceEntry>
+		    		<name>Inc</name>
+		    	</sourceEntry>
+                <sourceEntry>
+                        <name>Src</name>
+                </sourceEntry>
+		    	<sourceEntry>
+		    		<name>Drivers</name>
+		    	</sourceEntry>
+		    </sourceEntries>
+
+</Project>

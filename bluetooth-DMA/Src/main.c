@@ -139,12 +139,7 @@ int main(void)
   /* USER CODE BEGIN 3 */
   /* Check number of bytes in RingBuffer */
 	  		rx_count = RingBuffer_DMA_Count(&rx_buf);
-	  		/* Process each byte individually */
-	  		while (rx_count--) {
-	  			/* Read out one byte from RingBuffer */
-	  			uint8_t b = RingBuffer_DMA_GetByte(&rx_buf);
-	  			if (b == '\r' || b == '\n') { /* If \r or \n process command */
-	  				/* Terminate string with \0 */
+	  		/* Proce2		/* Terminate string with \0 */
 	  				cmd[icmd] = 0;
 	  				icmd = 0;
 	  				/* Process command */
@@ -156,7 +151,7 @@ int main(void)
 	  		}
 	  		/* Send ping message every second */
 	  		if (HAL_GetTick() - lastTick > 1000) {
-	  			sprintf((char *) tx, "ping\r\n");
+	  			sprintf((char *) tx, "AT\r\n");
 	  			HAL_UART_Transmit(&huart4, tx, strlen((char *) tx), 100);
 	  			lastTick = HAL_GetTick();
 	  		}
@@ -233,6 +228,7 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 void Process_Command(char * command) {
+	LCD_Printf(command);
 	/* Parse commands here and execute them */
 }
 

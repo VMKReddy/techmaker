@@ -23,7 +23,7 @@
 #include "stm32f1xx_hal.h"
 
 // Please uncomment one of the lines to select your OLED chip
-//#define SSD1306
+#define SSD1306
 //#define SH1106
 
 #if defined (SSD1306)
